@@ -5,78 +5,157 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sobre - OpenDataAngola</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        /* Estilo Global */
+        * {
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            box-sizing: border-box;
         }
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f7f9fc;
+            color: #333;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Header */
         header {
-            background-color: #2b6777;
-            color: #fff;
+            background: linear-gradient(135deg, #2b6777, #4d99a0);
+            color: white;
             padding: 20px;
             text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        header p {
+            font-size: 1.2rem;
+        }
+
+        /* Navbar */
         nav {
             display: flex;
             justify-content: center;
-            background-color: #2b6777;
+            background: #2b6777;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
         nav a {
-            text-decoration: none;
-            color: #fff;
-            margin: 0 15px;
-            padding: 10px 15px;
+            padding: 15px 20px;
+            color: white;
+            font-weight: bold;
+            transition: background 0.3s, transform 0.2s;
         }
         nav a:hover {
-            background-color: #4d99a0;
+            background: #4d99a0;
+            transform: scale(1.1);
             border-radius: 5px;
         }
+
+        /* Secções */
         section {
-            padding: 20px;
+            padding: 50px 20px;
             text-align: center;
         }
+        section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+            color: #2b6777;
+        }
+        section h2::after {
+            content: "";
+            width: 60px;
+            height: 4px;
+            background: #4d99a0;
+            display: block;
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
         .container {
-            max-width: 900px;
+            max-width: 1200px;
             margin: auto;
         }
-        footer {
-            background-color: #2b6777;
-            color: #fff;
-            padding: 10px;
-            text-align: center;
-        }
-        .team, .partners {
+
+        /* Equipe */
+        .team {
             display: flex;
             justify-content: space-around;
             flex-wrap: wrap;
-            margin-top: 20px;
         }
-        .team div, .partners div {
-            margin: 10px;
+        .team .member {
+            background: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px;
             text-align: center;
+            transition: transform 0.3s;
         }
-        .team img, .partners img {
+        .team .member:hover {
+            transform: translateY(-10px);
+        }
+        .team img {
             border-radius: 50%;
             width: 150px;
+            height: 150px;
+            object-fit: cover;
+            margin-bottom: 15px;
         }
+
+        /* Parceiros */
+        .partners {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .partners img {
+            max-width: 150px;
+            margin: 20px;
+            transition: transform 0.3s;
+        }
+        .partners img:hover {
+            transform: scale(1.1);
+        }
+
+        /* Linha do Tempo */
         .timeline {
             list-style: none;
             padding: 0;
         }
         .timeline li {
-            margin: 10px 0;
-            background-color: #f4f4f4;
-            padding: 15px;
+            margin: 20px 0;
+            background: white;
             border-left: 5px solid #2b6777;
-            text-align: left;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background: #2b6777;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            margin-top: 50px;
+        }
+        footer p {
+            margin: 10px 0;
         }
     </style>
 </head>
 <body>
     <header>
         <h1>OpenDataAngola</h1>
-        <p>Promovendo a abertura de dados em Angola.</p>
+        <p>Promovendo a abertura de dados em Angola</p>
     </header>
     <nav>
         <a href="index.html">Início</a>
@@ -89,32 +168,24 @@
     <section id="missao">
         <div class="container">
             <h2>Nossa Missão</h2>
-            <p>
-                Promover a transparência governamental, a participação cidadã e o desenvolvimento socioeconômico por meio de dados abertos. 
-                Capacitar cidadãos, jornalistas e pesquisadores a usar dados para criar soluções inovadoras.
-            </p>
+            <p>Promover a transparência governamental, a participação cidadã e o desenvolvimento socioeconômico por meio de dados abertos.</p>
         </div>
     </section>
     <section id="equipe">
         <div class="container">
             <h2>Nossa Equipe</h2>
             <div class="team">
-                <div>
+                <div class="member">
                     <img src="./images/eugenio25.jpg" alt="Eugenio Nelson Dianguila">
                     <h3>Prof. Eugénio Nelson Dianguila</h3>
-                    <p>Função: Coordenador do projeto</p>
-                    <p>Licenciado em Informática Educativa.</p>
-                    <p>Com vasta experiência em projetos de dados abertos.</p>
-                                      
-                    <p>Responsável por análises de dados e pesquisa.</p>
+                    <p>Coordenador do projeto</p>
+                    <p>Licenciado em Informática Educativa, com vasta experiência em projetos de dados abertos.</p>
                 </div>
-                <div>
+                <div class="member">
                     <img src="./images/bruno.jpg" alt="Bruno Fonceca">
                     <h3>Bruno Fonceca</h3>
-                    <p>Função: Desenvolvedor de Software</p>
-                    <p>Engenheiro de Software com experiência em desenvolvimento web.</p>
-                    <p>Focado em criar plataformas acessíveis para dados abertos.</p>
-                    <p>Focado em comunicação e parcerias estratégicas.</p>
+                    <p>Desenvolvedor de Software</p>
+                    <p>Engenheiro de Software focado em desenvolvimento web e plataformas acessíveis.</p>
                 </div>
             </div>
         </div>
@@ -123,18 +194,8 @@
         <div class="container">
             <h2>Nossos Parceiros</h2>
             <div class="partners">
-                <div>
-                    <img src="./images/sigladnt.png" alt="Direcção de Trânsito e Segurança Rodoviária">
-                    <h3>Direcção de Trânsito e Segurança Rodoviária</h3>
-                    <p>Colaborando na disponibilização de dados sobre segurança rodoviária.</p>
-
-                </div>
-                <div>
-                    <img src="./images/bodiva.jpg" alt="Bolsa de Dívida e Valores de Angola">
-                    <h3>Bolsa de Dívida e Valores de Angola</h3>
-                    <p>Parceiro na disponibilização de dados financeiros e de mercado.</p>
-                    <p>Colaborando na promoção de dados abertos e transparência financeira.</p>
-                </div>
+                <img src="./images/sigladnt.png" alt="Direcção de Trânsito e Segurança Rodoviária">
+                <img src="./images/bodiva.jpg" alt="Bolsa de Dívida e Valores de Angola">
             </div>
         </div>
     </section>
@@ -143,25 +204,13 @@
             <h2>Linha do Tempo</h2>
             <ul class="timeline">
                 <li>
-                    <strong>2023:</strong> Fundação da DIANGUILA EMPREENDIMENTOS, LDA. Empresa criadora do projeto OpenDataAngola.
-                    <p>Início do projeto com foco em dados abertos.</p>
-                    <p>Início das operações com foco em dados abertos e transparência.</p>
-                    <p>Realização de workshops sobre o uso de dados abertos.</p>
-
+                    <strong>2023:</strong> Fundação da DIANGUILA EMPREENDIMENTOS, LDA e início do OpenDataAngola.
                 </li>
                 <li>
-                    <strong>2024:</strong> Lançamento do primeiro conjunto de dados.
-                    <p>Parcerias com instituições governamentais para disponibilização de dados.</p>
-                    <p>Desenvolvimento de ferramentas para visualização de dados.</p>
-                    <p>Participação em conferências sobre dados abertos.</p>
+                    <strong>2024:</strong> Lançamento do primeiro conjunto de dados abertos e parcerias estratégicas.
                 </li>
                 <li>
-                    <strong>2025:</strong> Parcerias estratégicas para expandir o alcance.
-                    <p>Colaboração com universidades e ONGs para capacitação em dados abertos.</p>
-                    <p>Promoção de hackathons para incentivar o uso de dados abertos.</p>
-                    <p>Desenvolvimento de uma plataforma online para acesso a dados.</p>
-                    <p>Participação em eventos internacionais sobre dados abertos.</p>
-                    <p>Promoção de iniciativas de cidadania digital.</p>
+                    <strong>2025:</strong> Expansão do projeto com novas funcionalidades e eventos comunitários.
                 </li>
             </ul>
         </div>
@@ -169,9 +218,8 @@
     <section id="contato">
         <div class="container">
             <h2>Contato</h2>
-            <p>Envie suas dúvidas ou sugestões:</p>
-            <p>Email: opendataangola@opendataangola.com</p>
-            <p>Twitter: <a href="https://twitter.com/OpenDataAngola">@OpenDataAngola</a></p>
+            <p>Email: <a href="mailto:opendataangola@opendataangola.com">opendataangola@opendataangola.com</a></p>
+            <p>Twitter: <a href="https://twitter.com/OpenDataAngola" target="_blank">@OpenDataAngola</a></p>
         </div>
     </section>
     <footer>
