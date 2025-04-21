@@ -220,3 +220,76 @@
       height: 400px; /* Reduz a altura */
     }
   }
+
+
+  /* Estilos para a página Sobre */
+#sobre-hero {
+    background-color: var(--background-color);
+    padding: 50px 0;
+    text-align: center;
+}
+
+#sobre-hero h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+/* Estilos para a seção da Equipe */
+.equipe-membros {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.membro {
+    width: 30%;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.membro img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.membro h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.membro p {
+    font-size: 1em;
+    color: var(--secondary-color);
+}
+
+/* Estilos para a seção de Parceiros */
+.parceiros-logos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.parceiros-logos img {
+    width: 150px;
+    margin: 20px;
+}
+
+/* Media Queries para a página Sobre */
+@media (max-width: 768px) {
+    .equipe-membros {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .membro {
+        width: 80%;
+    }
+
+    .parceiros-logos img {
+        width: 120px;
+    }
+}
