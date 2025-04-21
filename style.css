@@ -1,67 +1,222 @@
-/* Aqui você colocará seus estilos CSS */
-
-body {
-    font-family: sans-serif; /* Fonte padrão */
-    margin: 0; /* Remove margens padrão */
-    padding: 0; /* Remove preenchimento padrão */
-    background-color: #f4f4f4; /* Cor de fundo */
-    color: #333; /* Cor do texto */
-}
-
-.container {
-    width: 80%; /* Largura do container */
-    margin: 0 auto; /* Centraliza o container */
-    max-width: 1200px; /* Largura máxima do container */
-}
-
-header {
-    background-color: #333; /* Cor de fundo do cabeçalho */
-    color: #fff; /* Cor do texto do cabeçalho */
-    padding: 1em 0; /* Preenchimento superior e inferior */
-}
-
-header h1 a {
-    color: #fff; /* Cor do link do título */
-    text-decoration: none; /* Remove sublinhado do link */
-}
-
-nav ul {
-    list-style: none; /* Remove marcadores da lista */
-    padding: 0; /* Remove preenchimento da lista */
-    margin: 0; /* Remove margens da lista */
-}
-
-nav li {
-    display: inline; /* Coloca os itens da lista em linha */
-    margin-right: 20px; /* Espaçamento entre os itens da lista */
-}
-
-nav a {
-    color: #fff; /* Cor dos links da navegação */
-    text-decoration: none; /* Remove sublinhado dos links */
-}
-
-main {
-    padding: 20px 0; /* Preenchimento superior e inferior */
-}
-
-#hero {
-    background-color: #eee; /* Cor de fundo da seção Hero */
-    padding: 50px 0; /* Preenchimento superior e inferior */
-    text-align: center; /* Centraliza o texto */
-}
-
-.button {
-    background-color: #333; /* Cor de fundo do botão */
-    color: #fff; /* Cor do texto do botão */
-    padding: 10px 20px; /* Preenchimento do botão */
-    text-decoration: none; /* Remove sublinhado do botão */
-    border-radius: 5px; /* Borda arredondada */
-}
-
-footer {
-    background-color: #333; /* Cor de fundo do rodapé */
-    color: #fff; /* Cor do texto do rodapé */
-    text-align: center; /* Centraliza o texto */
-    padding: 1em 0; /* Preenchimento superior e inferior */
-}
+/* Reset de Estilos (Opcional, mas recomendado para consistência entre navegadores) */
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  
+  /* Variáveis de Cores (Mais fácil de manter e alterar) */
+  :root {
+    --primary-color: #007bff; /* Azul primário (links, botões) */
+    --secondary-color: #6c757d; /* Cinza secundário (textos secundários) */
+    --accent-color: #28a745; /* Verde (destaque, sucesso) */
+    --background-color: #f8f9fa; /* Fundo claro */
+    --text-color: #343a40; /* Cor principal do texto */
+    --header-footer-color: #343a40; /* Cor do cabeçalho e rodapé */
+    --header-footer-text-color: #fff; /* Cor do texto do cabeçalho e rodapé */
+  }
+  
+  /* Estilos Globais */
+  body {
+    font-family: 'Nunito', sans-serif; /* Fonte moderna e legível (adicione no <head>) */
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+  }
+  
+  .container {
+    width: 85%; /* Aumentei um pouco para preencher mais a tela */
+    margin: 0 auto;
+    max-width: 1200px;
+  }
+  
+  a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease; /* Transição suave na cor */
+  }
+  
+  a:hover {
+    text-decoration: underline;
+    color: darken(var(--primary-color), 10%); /* Escurece um pouco no hover */
+  }
+  
+  /* Cabeçalho */
+  header {
+    background-color: var(--header-footer-color);
+    color: var(--header-footer-text-color);
+    padding: 1.5em 0; /* Aumentei o padding */
+    position: sticky; /* Fixa o cabeçalho no topo */
+    top: 0;
+    z-index: 100; /* Garante que o cabeçalho fique acima de outros elementos */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  }
+  
+  header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  header h1 {
+    margin: 0; /* Remove a margem padrão do h1 */
+    font-size: 1.75em; /* Aumentei o tamanho da fonte */
+  }
+  
+  header h1 a {
+    color: var(--header-footer-text-color);
+    text-decoration: none;
+  }
+  
+  nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Para alinhar os itens horizontalmente */
+  }
+  
+  nav li {
+    margin-left: 25px; /* Aumentei o espaçamento */
+  }
+  
+  nav a {
+    color: var(--header-footer-text-color);
+    text-decoration: none;
+    font-weight: 500; /* Deixa a fonte um pouco mais grossa */
+    transition: color 0.3s ease;
+  }
+  
+  nav a:hover {
+    color: #ddd;
+  }
+  
+  /* Hero Section */
+  #hero {
+    background-color: #e9ecef;
+    padding: 80px 0; /* Aumentei o padding */
+    text-align: center;
+    background-image: url('images/angola-data.jpg'); /* Adicione uma imagem de fundo */
+    background-size: cover; /* Preenche todo o espaço */
+    background-position: center; /* Centraliza a imagem */
+    color: var(--header-footer-text-color); /* Texto branco para contrastar com a imagem */
+  }
+  
+  #hero .container {
+    background-color: rgba(0, 0, 0, 0.5); /* Adiciona uma camada escura para melhorar a legibilidade */
+    padding: 40px; /* Aumenta o padding do container */
+    border-radius: 10px; /* Adiciona bordas arredondadas */
+  }
+  
+  #hero h2 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    color: var(--header-footer-text-color);
+  }
+  
+  #hero p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    color: var(--header-footer-text-color);
+  }
+  
+  .button {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--header-footer-text-color);
+    padding: 14px 28px; /* Aumentei o padding */
+    text-decoration: none;
+    border-radius: 7px; /* Aumentei o raio da borda */
+    font-weight: 600; /* Deixa a fonte mais grossa */
+    transition: background-color 0.3s ease; /* Adiciona transição */
+  }
+  
+  .button:hover {
+    background-color: darken(var(--primary-color), 10%);
+  }
+  
+  /* Seções */
+  section {
+    padding: 60px 0; /* Aumentei o padding */
+  }
+  
+  section h2 {
+    font-size: 2.5em; /* Aumentei o tamanho da fonte */
+    margin-bottom: 30px; /* Aumentei a margem */
+    text-align: center;
+    color: var(--text-color);
+  }
+  
+  section p {
+    font-size: 1.1em;
+    color: var(--secondary-color);
+  }
+  
+  /* Google Sheets Embed */
+  .google-sheets-embed {
+    width: 100%;
+    overflow-x: auto;
+    border: 1px solid #ddd; /* Adiciona uma borda */
+    border-radius: 5px; /* Adiciona bordas arredondadas */
+  }
+  
+  .google-sheets-embed iframe {
+    width: 100%;
+    height: 600px; /* Aumentei a altura */
+    border: none;
+  }
+  
+  /* Rodapé */
+  footer {
+    background-color: var(--header-footer-color);
+    color: var(--header-footer-text-color);
+    text-align: center;
+    padding: 1.5em 0; /* Aumentei o padding */
+    font-size: 0.9em;
+  }
+  
+  /* Estilos para Listas */
+  ul {
+    list-style: none; /* Remove os marcadores */
+    padding: 0;
+  }
+  
+  ul li {
+    margin-bottom: 10px; /* Espaçamento entre itens */
+  }
+  
+  /* Media Queries para Responsividade */
+  @media (max-width: 768px) {
+    .container {
+      width: 95%; /* Aumenta a largura em telas menores */
+    }
+  
+    header .container {
+      flex-direction: column; /* Coloca o título e a navegação em colunas */
+      align-items: flex-start; /* Alinha à esquerda */
+    }
+  
+    header h1 {
+      margin-bottom: 10px; /* Adiciona espaço abaixo do título */
+    }
+  
+    nav ul {
+      flex-direction: column; /* Coloca os itens da navegação em colunas */
+    }
+  
+    nav li {
+      margin-left: 0; /* Remove a margem */
+      margin-bottom: 10px; /* Adiciona espaço abaixo */
+    }
+  
+    #hero {
+      padding: 60px 0; /* Reduz o padding */
+    }
+  
+    #hero h2 {
+      font-size: 2.5em; /* Reduz o tamanho da fonte */
+    }
+  
+    .google-sheets-embed iframe {
+      height: 400px; /* Reduz a altura */
+    }
+  }
