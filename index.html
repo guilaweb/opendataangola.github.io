@@ -6,13 +6,16 @@
     <meta name="description" content="OpenDataAngola: Dados abertos para Angola! Promovemos transparência, participação e desenvolvimento. Explore, contribua e construa uma Angola mais aberta e informada.">
     <title>OpenDataAngola</title>
 
-    <!-- Link para o arquivo CSS (estilo) -->
+    <!-- Link para o arquivo CSS -->
     <link rel="stylesheet" href="style.css">
 
-    <!-- Link para a biblioteca Font Awesome (ícones) - CDN -->
+    <!-- Link para a biblioteca Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" 
           integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" 
           crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Link para a biblioteca Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 
@@ -55,7 +58,9 @@
         <section id="dados">
             <div class="container">
                 <h2>Dados Disponíveis</h2>
-                <p>Explore os dados disponíveis abaixo e clique para baixá-los:</p>
+                <p>Veja um resumo visual de dados disponíveis:</p>
+                <canvas id="dadosChart" width="400" height="200"></canvas>
+                <p>Explore mais detalhes na tabela abaixo:</p>
                 <table style="width: 100%; border-collapse: collapse; margin-top: 20px; font-size: 1rem; text-align: left;">
                     <thead>
                         <tr style="background-color: #2b6777; color: white;">
@@ -79,18 +84,10 @@
                                 <a href="https://drive.google.com/file/d/1exemplo2" target="_blank" style="color: #2b6777; text-decoration: underline;">Baixar</a>
                             </td>
                         </tr>
-                        <tr style="background-color: #f9f9f9;">
-                            <td style="padding: 10px; border: 1px solid #ddd;">Economia 2023</td>
-                            <td style="padding: 10px; border: 1px solid #ddd;">Estatísticas econômicas sobre Angola.</td>
-                            <td style="padding: 10px; border: 1px solid #ddd;">
-                                <a href="https://drive.google.com/file/d/1exemplo3" target="_blank" style="color: #2b6777; text-decoration: underline;">Baixar</a>
-                            </td>
-                        </tr>
                     </tbody>
                 </table>
             </div>
         </section>
-        
 
         <!-- Contribuir Section -->
         <section id="contribuir">
@@ -111,19 +108,47 @@
             <div class="container">
                 <h2>Contato</h2>
                 <p>Entre em contato conosco para tirar dúvidas, enviar sugestões ou colaborar com o projeto.</p>
-                <p><i class="fas fa-envelope"></i> <a href="mailto:guilaweb@gmail.com">guilaweb@gmail.com</a></p>
-                <p><i class="fab fa-twitter"></i> <a href="#">@OpenDataAngola</a></p>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:seuemail@example.com">seuemail@example.com</a></p>
+                <p><i class="fab fa-twitter"></i> <a href="#">@OpenDataAngola</a> (Se tiver um Twitter)</p>
             </div>
         </section>
     </main>
 
     <footer>
         <div class="container">
-            <p>© 2023 OpenDataAngola. Todos os direitos reservados a DIANGUILA EMPREENDIMENTOS, LDA</p>
+            <p>© 2023 OpenDataAngola. Todos os direitos reservados.</p>
         </div>
     </footer>
 
-    <!-- Link para o arquivo JavaScript -->
-    <script src="script.js"></script>
+    <!-- Script para o gráfico dinâmico -->
+    <script>
+        const ctx = document.getElementById('dadosChart').getContext('2d');
+        const dadosChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['População', 'Educação'],
+                datasets: [{
+                    label: 'Número de Registros (em Milhares)',
+                    data: [3000, 2500],
+                    backgroundColor: ['#2b6777', '#4d99a0'],
+                    borderColor: ['#1c4e57', '#3c7d88'],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                },
+                plugins: {
+                    legend: {
+                        position: 'bottom'
+                    }
+                }
+            }
+        });
+    </script>
+
 </body>
 </html>
